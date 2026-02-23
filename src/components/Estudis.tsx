@@ -38,7 +38,7 @@ export default function Estudis() {
                 <BookOpen size={40} className="text-slate-400" />
               </div>
               <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/50 to-transparent">
-                <span className="text-white text-xs font-medium">Centre d'Estudis</span>
+                <span className="text-white text-xs font-medium">Col·legi L'estonnac</span>
               </div>
             </div>
             <div className="aspect-square bg-slate-200 rounded-xl overflow-hidden relative group">
@@ -46,7 +46,7 @@ export default function Estudis() {
                 <GraduationCap size={40} className="text-slate-400" />
               </div>
               <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/50 to-transparent">
-                <span className="text-white text-xs font-medium">Projectes Tècnics</span>
+                <span className="text-white text-xs font-medium">Acadèmia Cots</span>
               </div>
             </div>
           </div>
@@ -61,29 +61,61 @@ export default function Estudis() {
           </div>
           <h2 className="text-2xl font-bold text-slate-900">Actualitat</h2>
         </div>
-        <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
-          <div className="aspect-video bg-slate-100 rounded-xl mb-6 relative overflow-hidden flex items-center justify-center">
-            <Laptop size={64} className="text-slate-300" />
-            <div className="absolute top-4 left-4 bg-primary text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-widest">
-              En curs
+        
+        <div className="space-y-6">
+          {/* Card 1: Grau Superior */}
+          <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+            <div className="aspect-video bg-slate-100 rounded-xl mb-6 relative overflow-hidden flex items-center justify-center">
+              <Laptop size={64} className="text-slate-300" />
+              <div className="absolute top-4 left-4 bg-primary text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-widest">
+                En curs
+              </div>
+            </div>
+            <h3 className="text-lg font-bold">Grau superior en Desenvolupament d'aplicacions web.</h3>
+          </div>
+
+          {/* Card 2: Especialització */}
+          <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+            <div className="flex items-start gap-3">
+              <CheckCircle2 size={24} className="text-primary shrink-0 mt-1" />
+              <div>
+                <h3 className="text-lg font-bold mb-2">Especialització</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  Inteligència Artificial, Automatitzacions i Creació de Continguts.
+                </p>
+              </div>
             </div>
           </div>
-          <h3 className="text-lg font-bold mb-3">Desenvolupament i Especialització</h3>
-          <p className="text-slate-600 mb-6 leading-relaxed">
-            Actualment estic ampliant els meus coneixements en noves tecnologies i metodologies de gestió. El focus es troba en l'optimització de processos i la implementació de solucions digitals en entorns industrials.
-          </p>
-          <ul className="space-y-3">
-            {[
-              "Màster en Gestió d'Actius Industrials",
-              "Certificació Avançada en Eficiència Energètica",
-              "Seminaris sobre Indústria 4.0"
-            ].map((item, i) => (
-              <li key={i} className="flex items-start gap-3">
-                <CheckCircle2 size={20} className="text-primary shrink-0" />
-                <span className="text-sm text-slate-700">{item}</span>
-              </li>
-            ))}
-          </ul>
+
+          {/* Card 3: Certificat de professionalitat */}
+          <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+            <div className="flex items-start gap-3">
+              <CheckCircle2 size={24} className="text-primary shrink-0 mt-1" />
+              <div>
+                <h3 className="text-lg font-bold mb-2">Certificat de professionalitat</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  IMAR0208- Montaje y Mantenimiento de Instalaciones de Climatización y Ventilación
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 4: Certificacions */}
+          <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+            <h3 className="text-lg font-bold mb-4">Certificacions</h3>
+            <ul className="space-y-3">
+              {[
+                "IA - Vibe Coding y Automatizaciones.",
+                "Marketing",
+                "SEO"
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <CheckCircle2 size={20} className="text-primary shrink-0" />
+                  <span className="text-sm text-slate-700">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
     </motion.div>
