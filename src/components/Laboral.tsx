@@ -66,100 +66,96 @@ export default function Laboral() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
-      className="max-w-screen-md mx-auto pb-24"
+      className="px-6 pb-32"
     >
       {/* Hero Section */}
-      <section className="px-6 py-12 md:py-20 bg-white border-b border-slate-100">
-        <div className="flex flex-col md:flex-row items-center gap-8">
-          <div className="flex-1">
-            <h1 className="text-4xl md:text-6xl font-black text-slate-900 leading-tight mb-4">
-              Començament <span className="text-primary">laboral</span>
-            </h1>
-            <p className="text-slate-600 text-lg leading-relaxed max-w-xl">
-              Benvinguts al meu portafoli professional. Sóc un entusiasta de la tecnologia amb ganes d'aprendre i créixer. Aquí trobareu les meves primeres passes en el món laboral.
-            </p>
-            <div className="mt-8">
-              <button className="bg-primary text-white px-6 py-3 rounded-lg font-bold flex items-center gap-2 shadow-lg shadow-primary/20 hover:scale-105 transition-transform">
-                <Download size={20} />
-                Descarregar CV
-              </button>
-            </div>
+      <section className="py-12 flex flex-col md:flex-row items-center gap-12">
+        <div className="flex-1 space-y-6">
+          <h1 className="text-6xl md:text-7xl font-black text-navy leading-tight">
+            Work <br />
+            <span className="gradient-text">Experience</span>
+          </h1>
+          <p className="text-navy/60 text-xl leading-relaxed max-w-xl">
+            Benvinguts al meu portafoli professional. Sóc un entusiasta de la tecnologia amb ganes d'aprendre i créixer.
+          </p>
+          <div className="flex gap-4">
+            <button className="bg-primary text-white px-8 py-4 rounded-2xl font-bold shadow-xl shadow-primary/30 hover:scale-105 transition-transform flex items-center gap-2">
+              <Download size={20} />
+              Descarregar CV
+            </button>
           </div>
-          <div className="hidden md:block w-1/3 aspect-square rounded-2xl bg-slate-200 overflow-hidden">
-            <img 
-              src="https://picsum.photos/seed/professional/600/600" 
-              alt="Professional" 
-              className="w-full h-full object-cover opacity-90"
-              referrerPolicy="no-referrer"
-            />
+        </div>
+        <div className="flex-1">
+          <div className="glass-card p-8 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full -translate-y-1/2 translate-x-1/2" />
+            <Briefcase size={64} className="text-primary mb-6" />
+            <h2 className="text-3xl font-black text-navy mb-2">Experiència Laboral</h2>
+            <p className="text-navy/50">El meu recorregut i aprenentatges inicials</p>
           </div>
         </div>
       </section>
 
-      {/* Experience Header */}
-      <div className="px-6 pt-12 pb-4">
-        <h2 className="text-2xl font-bold flex items-center gap-2">
-          <Briefcase className="text-primary" />
-          Experiència Laboral
-        </h2>
-        <p className="text-slate-500 text-sm mt-1">El meu recorregut i aprenentatges inicials</p>
-      </div>
-
       {/* Experience List */}
-      <div className="px-6 space-y-8 mt-6">
+      <div className="space-y-12 mt-12">
         {experiences.map((exp, index) => (
-          <div key={index} className="bg-white rounded-xl overflow-hidden shadow-sm border border-slate-100">
-            <div className="p-6">
-              <div className="flex items-start gap-4 mb-4">
-                <div className="size-12 rounded-lg bg-slate-50 flex items-center justify-center border border-slate-100 shrink-0">
+          <motion.div 
+            key={index}
+            initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-12 items-center`}
+          >
+            <div className="flex-1">
+              <div className="glass-card overflow-hidden group">
+                <img 
+                  src={exp.image} 
+                  alt={exp.company} 
+                  className="w-full aspect-video object-cover group-hover:scale-110 transition-transform duration-500"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+            </div>
+            <div className="flex-1 space-y-6">
+              <div className="flex items-center gap-4">
+                <div className="size-14 rounded-2xl bg-white shadow-lg flex items-center justify-center border border-slate-100 shrink-0">
                   {exp.icon}
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg leading-none">{exp.company}</h3>
-                  <p className="text-primary font-medium text-sm mt-1">{exp.role}</p>
+                  <h3 className="font-black text-2xl text-navy">{exp.company}</h3>
+                  <p className="text-primary font-bold">{exp.role}</p>
                 </div>
               </div>
               <div className="space-y-4">
-                <div>
-                  <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Funcions</h4>
-                  <ul className="text-sm text-slate-600 space-y-1">
-                    {exp.functions.map((func, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <span className="text-primary">•</span> {func}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="aspect-video w-full rounded-lg bg-slate-100 overflow-hidden">
-                  <img 
-                    src={exp.image} 
-                    alt={exp.company} 
-                    className="w-full h-full object-cover"
-                    referrerPolicy="no-referrer"
-                  />
-                </div>
+                <h4 className="text-xs font-black text-navy/30 uppercase tracking-widest">Funcions Principals</h4>
+                <ul className="grid grid-cols-1 gap-3">
+                  {exp.functions.map((func, i) => (
+                    <li key={i} className="flex items-center gap-3 text-navy/70">
+                      <div className="size-2 rounded-full bg-primary" />
+                      {func}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
 
       {/* Contact Section */}
-      <section className="mt-16 px-6 pt-12 border-t border-slate-200" id="contacte">
-        <h2 className="text-2xl font-bold mb-6">Parlem?</h2>
-        <div className="bg-primary/5 border border-primary/20 rounded-2xl p-8">
-          <p className="text-slate-700 mb-6 leading-relaxed">
-            Si t'ha interessat el meu perfil per a qualsevol col·laboració o oferta laboral, no dubtis en contactar-me.
-          </p>
-          <div className="space-y-4">
-            <a href="mailto:hola@marc.cat" className="flex items-center gap-3 text-slate-900 hover:text-primary transition-colors">
-              <Mail className="text-primary" size={20} />
-              <span className="font-medium">hola@marc.cat</span>
-            </a>
-            <div className="flex items-center gap-3 text-slate-900">
-              <MapPin className="text-primary" size={20} />
-              <span className="font-medium">Barcelona, Catalunya</span>
-            </div>
+      <section className="mt-32 glass-card p-12 text-center space-y-8 relative overflow-hidden" id="contacte">
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/5 to-accent-pink/5 -z-10" />
+        <h2 className="text-5xl font-black text-navy">Let's <span className="text-primary">Connect</span></h2>
+        <p className="text-navy/60 max-w-xl mx-auto text-lg leading-relaxed">
+          Si t'ha interessat el meu perfil per a qualsevol col·laboració o oferta laboral, no dubtis en contactar-me.
+        </p>
+        <div className="flex flex-wrap justify-center gap-8">
+          <a href="mailto:hola@marc.cat" className="flex items-center gap-3 text-navy font-bold hover:text-primary transition-colors bg-white px-6 py-3 rounded-2xl shadow-lg">
+            <Mail className="text-primary" size={24} />
+            hola@marc.cat
+          </a>
+          <div className="flex items-center gap-3 text-navy font-bold bg-white px-6 py-3 rounded-2xl shadow-lg">
+            <MapPin className="text-primary" size={24} />
+            Barcelona, Catalunya
           </div>
         </div>
       </section>

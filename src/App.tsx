@@ -45,80 +45,73 @@ export default function App() {
   ];
 
   return (
-    <div className="min-h-screen bg-background-light">
+    <div className="min-h-screen bg-peach">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
-        <div className="flex items-center px-4 py-3 justify-between max-w-xl mx-auto">
+      <header className="sticky top-0 z-50 bg-white/60 backdrop-blur-lg border-b border-white/20">
+        <div className="flex items-center px-6 py-4 justify-between max-w-4xl mx-auto">
           <div className="flex items-center gap-2">
-            <div className="bg-primary p-1 rounded-lg">
-              <GraduationCap size={20} className="text-white" />
+            <div className="bg-primary p-2 rounded-xl shadow-lg shadow-primary/20">
+              <GraduationCap size={24} className="text-white" />
             </div>
-            <span className="font-bold text-lg tracking-tight">Portfolio</span>
+            <span className="font-display font-bold text-xl tracking-tight text-navy">Esther Portfolio</span>
           </div>
-          <button className="p-2 rounded-full hover:bg-slate-100">
-            <Menu size={24} />
+          <button className="p-2 rounded-full hover:bg-white/50 transition-colors">
+            <Menu size={24} className="text-navy" />
           </button>
         </div>
 
         {/* Sub-nav Tabs */}
-        <nav className="flex overflow-x-auto no-scrollbar px-4 gap-6 border-t border-slate-100 bg-white max-w-xl mx-auto">
+        <nav className="flex overflow-x-auto no-scrollbar px-6 gap-8 bg-transparent max-w-4xl mx-auto">
           {navItems.map((item) => (
             <button
               key={item.id}
               onClick={() => setCurrentScreen(item.id as Screen)}
-              className={`flex flex-col items-center justify-center border-b-2 pb-3 pt-4 shrink-0 transition-all duration-300 ${
+              className={`flex flex-col items-center justify-center pb-4 pt-2 shrink-0 transition-all duration-300 relative ${
                 currentScreen === item.id 
-                  ? 'border-primary text-slate-900' 
-                  : 'border-transparent text-slate-500 hover:text-primary'
+                  ? 'text-primary font-bold' 
+                  : 'text-navy/50 hover:text-primary'
               }`}
             >
-              <p className="text-[10px] font-bold uppercase tracking-wider">{item.label}</p>
+              <span className="text-xs uppercase tracking-widest">{item.label}</span>
+              {currentScreen === item.id && (
+                <motion.div 
+                  layoutId="activeTab"
+                  className="absolute bottom-0 left-0 right-0 h-1 bg-primary rounded-full"
+                />
+              )}
             </button>
           ))}
         </nav>
       </header>
 
       {/* Main Content */}
-      <main className="relative">
+      <main className="relative py-8">
         <AnimatePresence mode="wait">
-          <div key={currentScreen}>
+          <div key={currentScreen} className="max-w-4xl mx-auto">
             {renderScreen()}
           </div>
         </AnimatePresence>
       </main>
 
       {/* Bottom Navigation */}
-      <footer className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-slate-200 px-6 py-3">
-        <div className="max-w-xl mx-auto flex justify-between items-center">
+      <footer className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-white/80 backdrop-blur-xl border border-white/40 px-8 py-4 rounded-full shadow-2xl flex gap-12 items-center">
+        {[
+          { id: 'inici', icon: Home, label: 'Inici' },
+          { id: 'estudis', icon: School, label: 'Estudis' },
+          { id: 'laboral', icon: Briefcase, label: 'Laboral' },
+          { id: 'perfil', icon: User, label: 'Perfil' },
+        ].map((tab) => (
           <button 
-            onClick={() => setActiveTab('inici')}
-            className={`flex flex-col items-center gap-1 transition-colors ${activeTab === 'inici' ? 'text-primary' : 'text-slate-400'}`}
+            key={tab.id}
+            onClick={() => setActiveTab(tab.id as Tab)}
+            className={`flex flex-col items-center gap-1 transition-all duration-300 ${
+              activeTab === tab.id ? 'text-primary scale-110' : 'text-navy/30 hover:text-navy/60'
+            }`}
           >
-            <Home size={24} fill={activeTab === 'inici' ? 'currentColor' : 'none'} />
-            <span className="text-[10px] font-bold uppercase tracking-tighter">Inici</span>
+            <tab.icon size={24} strokeWidth={activeTab === tab.id ? 2.5 : 2} />
+            <span className="text-[10px] font-bold uppercase tracking-tighter">{tab.label}</span>
           </button>
-          <button 
-            onClick={() => setActiveTab('estudis')}
-            className={`flex flex-col items-center gap-1 transition-colors ${activeTab === 'estudis' ? 'text-primary' : 'text-slate-400'}`}
-          >
-            <School size={24} fill={activeTab === 'estudis' ? 'currentColor' : 'none'} />
-            <span className="text-[10px] font-bold uppercase tracking-tighter">Estudis</span>
-          </button>
-          <button 
-            onClick={() => setActiveTab('laboral')}
-            className={`flex flex-col items-center gap-1 transition-colors ${activeTab === 'laboral' ? 'text-primary' : 'text-slate-400'}`}
-          >
-            <Briefcase size={24} fill={activeTab === 'laboral' ? 'currentColor' : 'none'} />
-            <span className="text-[10px] font-bold uppercase tracking-tighter">Laboral</span>
-          </button>
-          <button 
-            onClick={() => setActiveTab('perfil')}
-            className={`flex flex-col items-center gap-1 transition-colors ${activeTab === 'perfil' ? 'text-primary' : 'text-slate-400'}`}
-          >
-            <User size={24} fill={activeTab === 'perfil' ? 'currentColor' : 'none'} />
-            <span className="text-[10px] font-bold uppercase tracking-tighter">Perfil</span>
-          </button>
-        </div>
+        ))}
       </footer>
     </div>
   );

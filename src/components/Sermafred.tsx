@@ -8,118 +8,116 @@ export default function Sermafred() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
-      className="max-w-screen-md mx-auto pb-24"
+      className="px-6 pb-32"
     >
       {/* Hero Section */}
-      <section className="px-6 py-12 md:py-20 text-center">
-        <div className="mb-6 inline-flex p-4 rounded-full bg-primary/10 text-primary">
-          <Building size={48} />
+      <section className="py-12 text-center space-y-8">
+        <div className="mb-6 inline-flex p-6 rounded-[2rem] bg-white shadow-2xl text-primary">
+          <Building size={64} />
         </div>
-        <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4 tracking-tight">
-          Benvinguts a <span className="text-primary">Sermafred</span>
+        <h1 className="text-5xl md:text-7xl font-black text-navy leading-tight">
+          Benvinguts a <br />
+          <span className="gradient-text">Sermafred</span>
         </h1>
-        <p className="text-lg text-slate-600 max-w-lg mx-auto leading-relaxed">
-          Líders en solucions de refrigeració industrial i climatització professional amb més de 20 anys d'experiència al sector.
+        <p className="text-xl text-navy/60 max-w-2xl mx-auto leading-relaxed">
+          Líders en solucions de refrigeració industrial i climatització professional amb més de 20 anys d'experiència.
         </p>
       </section>
 
       {/* About Company Section */}
-      <section className="px-6 py-8">
-        <div className="bg-white rounded-xl p-8 border border-slate-100 shadow-sm">
-          <div className="flex items-center gap-3 mb-4 text-primary">
-            <Info size={20} />
-            <h2 className="text-xl font-bold uppercase tracking-wider text-sm">Sobre l'empresa</h2>
+      <section className="py-12">
+        <div className="glass-card p-12 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/2" />
+          <div className="flex items-center gap-4 mb-8 text-primary">
+            <Info size={32} />
+            <h2 className="text-2xl font-black uppercase tracking-widest">Sobre l'empresa</h2>
           </div>
-          <p className="text-slate-700 leading-relaxed">
-            Sermafred és una organització compromesa amb l'eficiència energètica i la innovació tecnològica. Ens especialitzem en el disseny, instal·lació i manteniment de sistemes crítics per a la indústria alimentària i farmacèutica, garantint sempre els més alts estàndards de qualitat i sostenibilitat.
+          <p className="text-navy/70 text-xl leading-relaxed max-w-3xl">
+            Sermafred és una organització compromesa amb l'eficiència energètica i la innovació tecnològica. Ens especialitzem en el disseny, instal·lació i manteniment de sistemes crítics.
           </p>
-          <div className="grid grid-cols-2 gap-4 mt-8">
-            <div className="p-4 bg-background-light rounded-lg border-l-4 border-primary">
-              <span className="block text-2xl font-bold text-primary">50+</span>
-              <span className="text-xs text-slate-500 uppercase font-medium">Projectes Anuals</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+            <div className="p-8 bg-white rounded-3xl shadow-xl shadow-primary/5 border border-slate-50">
+              <span className="block text-5xl font-black text-primary mb-2">50+</span>
+              <span className="text-sm text-navy/40 uppercase font-black tracking-widest">Projectes Anuals</span>
             </div>
-            <div className="p-4 bg-background-light rounded-lg border-l-4 border-primary">
-              <span className="block text-2xl font-bold text-primary">24/7</span>
-              <span className="text-xs text-slate-500 uppercase font-medium">Servei Tècnic</span>
+            <div className="p-8 bg-white rounded-3xl shadow-xl shadow-primary/5 border border-slate-50">
+              <span className="block text-5xl font-black text-primary mb-2">24/7</span>
+              <span className="text-sm text-navy/40 uppercase font-black tracking-widest">Servei Tècnic</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* Organigram Section */}
-      <section className="px-6 py-12 text-center">
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold text-slate-900 mb-2">Estructura Organitzativa</h2>
-          <div className="h-1 w-12 bg-primary mx-auto rounded-full"></div>
+      <section className="py-20 text-center space-y-12">
+        <div className="space-y-4">
+          <h2 className="text-5xl font-black text-navy">Estructura Organitzativa</h2>
+          <p className="text-navy/40 font-medium">Representació visual de la jerarquia i equips de Sermafred.</p>
         </div>
-        <div className="relative bg-white p-4 rounded-xl shadow-md border border-slate-100 overflow-hidden">
+        <div className="glass-card p-6 relative group overflow-hidden">
           <img 
-            src="https://picsum.photos/seed/org/800/500" 
+            src="https://picsum.photos/seed/org/1200/800" 
             alt="Organigrama" 
-            className="w-full h-auto rounded-lg grayscale hover:grayscale-0 transition-all duration-500"
+            className="w-full h-auto rounded-[2rem] grayscale group-hover:grayscale-0 transition-all duration-700"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-primary/5 pointer-events-none"></div>
+          <div className="absolute inset-0 bg-primary/5 pointer-events-none" />
         </div>
-        <p className="mt-4 text-sm text-slate-500 italic">
-          Representació visual de la jerarquia i equips de Sermafred.
-        </p>
       </section>
 
       {/* Responsibilities Section */}
-      <section className="px-6 py-12">
-        <h2 className="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-2">
-          <Building className="text-primary" />
-          Responsabilitats Actuals
+      <section className="py-12 space-y-12">
+        <h2 className="text-4xl font-black text-navy flex items-center gap-4">
+          <Building className="text-primary" size={40} />
+          Responsabilitats
         </h2>
-        <div className="space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
             {
-              title: "Gestió de Projectes Tècnics",
-              desc: "Coordinació integral des de la fase de disseny fins a l'execució final de sistemes de fred industrial, assegurant terminis i pressupostos.",
-              icon: <HardHat size={24} />
+              title: "Gestió Projectes",
+              desc: "Coordinació integral des del disseny fins a l'execució.",
+              icon: <HardHat size={32} />
             },
             {
-              title: "Lideratge d'Equips",
-              desc: "Supervisió de quadrilles tècniques en camp, fomentant un entorn de treball segur i eficient sota les normatives ISO vigents.",
-              icon: <Users size={24} />
+              title: "Lideratge",
+              desc: "Supervisió de quadrilles tècniques en camp.",
+              icon: <Users size={32} />
             },
             {
-              title: "Optimització Energètica",
-              desc: "Anàlisi i implementació de millores en sistemes existents per reduir la petjada de carboni i el consum elèctric dels nostres clients.",
-              icon: <Leaf size={24} />
+              title: "Optimització",
+              desc: "Anàlisi i millora de sistemes energètics.",
+              icon: <Leaf size={32} />
             }
           ].map((item, i) => (
-            <div key={i} className="flex gap-4 group">
-              <div className="flex-none w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+            <motion.div 
+              key={i}
+              whileHover={{ y: -10 }}
+              className="glass-card p-8 space-y-6"
+            >
+              <div className="size-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center">
                 {item.icon}
               </div>
-              <div>
-                <h3 className="text-lg font-bold text-slate-900 mb-1">{item.title}</h3>
-                <p className="text-slate-600">{item.desc}</p>
-              </div>
-            </div>
+              <h3 className="text-2xl font-black text-navy leading-tight">{item.title}</h3>
+              <p className="text-navy/50 leading-relaxed">{item.desc}</p>
+            </motion.div>
           ))}
         </div>
       </section>
 
       {/* Footer CTA */}
-      <footer className="px-6 py-12 mt-12 border-t border-slate-200 text-center">
-        <div className="mb-6">
-          <div className="bg-primary/5 inline-block p-4 rounded-xl border border-primary/20">
-            <p className="text-slate-900 font-semibold">T'interessa saber-ne més?</p>
-            <p className="text-sm text-slate-500 mt-1">Connectem professionalment.</p>
-            <div className="flex justify-center gap-4 mt-4">
-              <button className="w-10 h-10 rounded-full bg-white shadow flex items-center justify-center text-primary hover:scale-110 transition-transform">
-                <Mail size={20} />
-              </button>
-              <button className="w-10 h-10 rounded-full bg-white shadow flex items-center justify-center text-primary hover:scale-110 transition-transform">
-                <LinkIcon size={20} />
-              </button>
-            </div>
-          </div>
+      <footer className="mt-32 glass-card p-16 text-center space-y-8 relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/5 to-accent-pink/5 -z-10" />
+        <h2 className="text-4xl font-black text-navy">T'interessa saber-ne més?</h2>
+        <p className="text-navy/60 max-w-xl mx-auto text-lg leading-relaxed">Connectem professionalment per explorar noves oportunitats.</p>
+        <div className="flex justify-center gap-6">
+          <button className="size-16 rounded-2xl bg-white shadow-xl flex items-center justify-center text-primary hover:scale-110 transition-transform">
+            <Mail size={28} />
+          </button>
+          <button className="size-16 rounded-2xl bg-white shadow-xl flex items-center justify-center text-primary hover:scale-110 transition-transform">
+            <LinkIcon size={28} />
+          </button>
         </div>
-        <p className="text-xs text-slate-400 uppercase tracking-widest">© 2024 Sermafred Portfolio • Minimal Design</p>
+        <p className="text-xs text-navy/30 uppercase tracking-[0.3em] pt-12">© 2024 Sermafred Portfolio • Minimal Design</p>
       </footer>
     </motion.div>
   );

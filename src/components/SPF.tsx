@@ -8,109 +8,116 @@ export default function SPF() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
-      className="max-w-lg mx-auto pb-24"
+      className="px-6 pb-32"
     >
       {/* Hero Section */}
-      <section className="px-6 pt-10 pb-8 text-center">
-        <div className="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-primary uppercase bg-primary/10 rounded-full">
+      <section className="py-12 text-center space-y-6">
+        <div className="inline-block px-4 py-1.5 text-xs font-black tracking-widest text-primary uppercase bg-primary/10 rounded-full">
           Consultoria & Gestió
         </div>
-        <h2 className="text-3xl font-extrabold leading-tight text-slate-900 mb-4">
-          Innovació i Excel·lència Professional
+        <h2 className="text-5xl md:text-6xl font-black leading-tight text-navy">
+          Innovació i <br />
+          <span className="gradient-text">Excel·lència</span>
         </h2>
-        <p className="text-slate-600 text-base leading-relaxed">
-          A SPF ens dediquem a oferir solucions estratègiques personalitzades per a empreses que busquen optimitzar els seus processos i créixer de manera sostenible en el mercat actual.
+        <p className="text-navy/60 text-lg leading-relaxed max-w-2xl mx-auto">
+          A SPF ens dediquem a oferir solucions estratègiques personalitzades per a empreses que busquen optimitzar els seus processos.
         </p>
       </section>
 
       {/* Company Image */}
-      <section className="px-6 mb-12">
-        <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-sm border border-slate-200 bg-white flex items-center justify-center">
+      <section className="mb-20">
+        <div className="glass-card overflow-hidden relative aspect-video group">
           <img 
-            src="https://picsum.photos/seed/office/800/450" 
+            src="https://picsum.photos/seed/office/1200/675" 
             alt="SPF Office" 
-            className="absolute inset-0 w-full h-full object-cover opacity-90"
+            className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             referrerPolicy="no-referrer"
           />
-          <div className="relative z-10 flex flex-col items-center">
-            <Building2 size={48} className="text-white mb-2" />
-            <span className="text-white font-bold tracking-widest text-lg">SPF BARCELONA</span>
+          <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/20 to-transparent flex flex-col items-center justify-end pb-12">
+            <Building2 size={64} className="text-white mb-4" />
+            <span className="text-white font-black tracking-[0.3em] text-2xl">SPF BARCELONA</span>
           </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
         </div>
       </section>
 
-      {/* Structure */}
-      <section className="px-6 mb-12">
-        <div className="flex items-center gap-3 mb-6">
-          <Network className="text-primary" />
-          <h3 className="text-xl font-bold text-slate-900">Estructura Organitzativa</h3>
-        </div>
-        <div className="p-4 bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
-          <div className="flex flex-col items-center">
+      {/* Structure & Functions */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <section className="space-y-8">
+          <div className="flex items-center gap-4">
+            <div className="size-12 rounded-2xl bg-accent-teal/10 flex items-center justify-center text-accent-teal">
+              <Network size={24} />
+            </div>
+            <h3 className="text-3xl font-black text-navy">Estructura</h3>
+          </div>
+          <div className="glass-card p-4 overflow-hidden">
             <img 
-              src="https://picsum.photos/seed/chart/600/400" 
+              src="https://picsum.photos/seed/chart/800/600" 
               alt="Organigrama" 
-              className="w-full rounded-lg"
+              className="w-full rounded-3xl"
               referrerPolicy="no-referrer"
             />
-            <p className="mt-4 text-xs text-slate-500 italic text-center">
+            <p className="mt-6 text-sm text-navy/40 italic text-center font-medium">
               Representació visual de la jerarquia i equips de treball a SPF
             </p>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Functions */}
-      <section className="px-6 mb-12">
-        <div className="flex items-center gap-3 mb-6">
-          <Target className="text-primary" />
-          <h3 className="text-xl font-bold text-slate-900">Funcions Desenvolupades</h3>
-        </div>
-        <div className="space-y-4">
-          {[
-            {
-              title: "Consultoria Estratègica",
-              desc: "Anàlisi de mercat i definició de fulls de ruta per a la transformació digital.",
-              icon: <Target size={20} className="text-primary" />
-            },
-            {
-              title: "Optimització Operativa",
-              desc: "Millora de processos interns per augmentar l'eficiència i reduir costos.",
-              icon: <Settings size={20} className="text-primary" />
-            },
-            {
-              title: "Gestió de Projectes",
-              desc: "Supervisió integral des de la concepció fins a l'execució final.",
-              icon: <BarChart3 size={20} className="text-primary" />
-            }
-          ].map((func, i) => (
-            <div key={i} className="flex gap-4 p-4 bg-white rounded-xl border border-slate-200 transition-all hover:border-primary/50">
-              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                {func.icon}
-              </div>
-              <div>
-                <h4 className="font-bold text-slate-900">{func.title}</h4>
-                <p className="text-sm text-slate-600 mt-1">{func.desc}</p>
-              </div>
+        <section className="space-y-8">
+          <div className="flex items-center gap-4">
+            <div className="size-12 rounded-2xl bg-accent-pink/10 flex items-center justify-center text-accent-pink">
+              <Target size={24} />
             </div>
-          ))}
-        </div>
-      </section>
+            <h3 className="text-3xl font-black text-navy">Funcions</h3>
+          </div>
+          <div className="space-y-4">
+            {[
+              {
+                title: "Consultoria Estratègica",
+                desc: "Anàlisi de mercat i definició de fulls de ruta.",
+                icon: <Target size={24} />
+              },
+              {
+                title: "Optimització Operativa",
+                desc: "Millora de processos interns i eficiència.",
+                icon: <Settings size={24} />
+              },
+              {
+                title: "Gestió de Projectes",
+                desc: "Supervisió integral des de la concepció.",
+                icon: <BarChart3 size={24} />
+              }
+            ].map((func, i) => (
+              <motion.div 
+                key={i}
+                whileHover={{ x: 10 }}
+                className="glass-card p-6 flex gap-6 items-center"
+              >
+                <div className="size-14 rounded-2xl bg-white shadow-lg flex items-center justify-center text-primary shrink-0">
+                  {func.icon}
+                </div>
+                <div>
+                  <h4 className="font-black text-xl text-navy">{func.title}</h4>
+                  <p className="text-sm text-navy/50 mt-1">{func.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+      </div>
 
       {/* About Card */}
-      <section className="px-6">
-        <div className="bg-primary p-8 rounded-2xl text-white overflow-hidden relative">
-          <div className="relative z-10">
-            <h3 className="text-2xl font-bold mb-2">Sobre SPF</h3>
-            <p className="text-blue-50 text-sm leading-relaxed mb-6">
+      <section className="mt-20">
+        <div className="bg-navy p-12 rounded-[3rem] text-white overflow-hidden relative">
+          <div className="relative z-10 max-w-xl">
+            <h3 className="text-4xl font-black mb-4">Sobre SPF</h3>
+            <p className="text-white/60 text-lg leading-relaxed mb-8">
               Som un equip multidisciplinari compromès amb la qualitat i el servei al client a tota Catalunya.
             </p>
-            <button className="bg-white text-primary px-6 py-2.5 rounded-lg font-bold text-sm shadow-md transition-transform active:scale-95">
+            <button className="bg-primary text-white px-8 py-4 rounded-2xl font-bold shadow-xl shadow-primary/20 hover:scale-105 transition-transform">
               Contacta amb nosaltres
             </button>
           </div>
-          <Verified size={120} className="absolute -bottom-4 -right-4 text-white/10 select-none" />
+          <Verified size={240} className="absolute -bottom-12 -right-12 text-white/5 select-none" />
         </div>
       </section>
     </motion.div>
