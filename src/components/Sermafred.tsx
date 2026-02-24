@@ -17,7 +17,7 @@ export default function Sermafred() {
         </div>
         <h1 className="text-5xl md:text-7xl font-black text-navy leading-tight">
           Benvinguts a <br />
-          <span className="gradient-text">Sermafred</span>
+          <span className="gradient-text uppercase">SERMAFRED LLEIDA, S.L.</span>
         </h1>
         <p className="text-xl text-navy/60 max-w-2xl mx-auto leading-relaxed">
           Líders en solucions de refrigeració industrial i climatització professional amb més de 20 anys d'experiència.
@@ -104,21 +104,6 @@ export default function Sermafred() {
         </div>
       </section>
 
-      {/* Footer CTA */}
-      <footer className="mt-32 glass-card p-16 text-center space-y-8 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/5 to-accent-pink/5 -z-10" />
-        <h2 className="text-4xl font-black text-navy">T'interessa saber-ne més?</h2>
-        <p className="text-navy/60 max-w-xl mx-auto text-lg leading-relaxed">Connectem professionalment per explorar noves oportunitats.</p>
-        <div className="flex justify-center gap-6">
-          <button className="size-16 rounded-2xl bg-white shadow-xl flex items-center justify-center text-primary hover:scale-110 transition-transform">
-            <Mail size={28} />
-          </button>
-          <button className="size-16 rounded-2xl bg-white shadow-xl flex items-center justify-center text-primary hover:scale-110 transition-transform">
-            <LinkIcon size={28} />
-          </button>
-        </div>
-        <p className="text-xs text-navy/30 uppercase tracking-[0.3em] pt-12">© 2024 Sermafred Portfolio • Minimal Design</p>
-      </footer>
     </motion.div>
   );
 }
