@@ -7,11 +7,6 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   Menu, 
-  School, 
-  Home, 
-  Briefcase, 
-  User, 
-  ChevronRight,
   GraduationCap
 } from 'lucide-react';
 
@@ -21,11 +16,9 @@ import SPF from './components/SPF';
 import Sermafred from './components/Sermafred';
 
 type Screen = 'estudis' | 'laboral' | 'spf' | 'sermafred';
-type Tab = 'inici' | 'estudis' | 'laboral' | 'perfil';
 
 export default function App() {
   const [currentScreen, setCurrentScreen] = useState<Screen>('estudis');
-  const [activeTab, setActiveTab] = useState<Tab>('estudis');
 
   const renderScreen = () => {
     switch (currentScreen) {
@@ -92,27 +85,6 @@ export default function App() {
           </div>
         </AnimatePresence>
       </main>
-
-      {/* Bottom Navigation */}
-      <footer className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-white/80 backdrop-blur-xl border border-white/40 px-8 py-4 rounded-full shadow-2xl flex gap-12 items-center">
-        {[
-          { id: 'inici', icon: Home, label: 'Inici' },
-          { id: 'estudis', icon: School, label: 'Estudis' },
-          { id: 'laboral', icon: Briefcase, label: 'Laboral' },
-          { id: 'perfil', icon: User, label: 'Perfil' },
-        ].map((tab) => (
-          <button 
-            key={tab.id}
-            onClick={() => setActiveTab(tab.id as Tab)}
-            className={`flex flex-col items-center gap-1 transition-all duration-300 ${
-              activeTab === tab.id ? 'text-primary scale-110' : 'text-navy/30 hover:text-navy/60'
-            }`}
-          >
-            <tab.icon size={24} strokeWidth={activeTab === tab.id ? 2.5 : 2} />
-            <span className="text-[10px] font-bold uppercase tracking-tighter">{tab.label}</span>
-          </button>
-        ))}
-      </footer>
     </div>
   );
 }

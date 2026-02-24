@@ -117,19 +117,24 @@ export default function SPF() {
           <div className="space-y-4">
             {[
               {
-                title: "Consultoria Estratègica",
-                desc: "Anàlisi de mercat i definició de fulls de ruta.",
+                title: "Atenció Telefònica",
+                desc: "Atenció telefònica amb Anglès, Castellà i Català.",
                 icon: <Target size={24} />
               },
               {
-                title: "Optimització Operativa",
-                desc: "Millora de processos interns i eficiència.",
+                title: "Comptabilitat",
+                desc: "Comptabilitat i Facturació.",
+                icon: <BarChart3 size={24} />
+              },
+              {
+                title: "Logística",
+                desc: "Organització de la logística dels camions cisterna i dels bidons.",
                 icon: <Settings size={24} />
               },
               {
-                title: "Gestió de Projectes",
-                desc: "Supervisió integral des de la concepció.",
-                icon: <BarChart3 size={24} />
+                title: "Producció",
+                desc: "Organització amb el departament de producció.",
+                icon: <Network size={24} />
               }
             ].map((func, i) => (
               <motion.div 
@@ -149,6 +154,19 @@ export default function SPF() {
           </div>
         </section>
       </div>
+
+      {/* Future Outlook */}
+      <section className="mt-20">
+        <div className="glass-card p-8 bg-primary/5 border-primary/20 border-dashed border-2 text-center">
+          <div className="inline-flex p-3 rounded-full bg-primary/10 text-primary mb-4">
+            <BarChart3 size={32} />
+          </div>
+          <h3 className="text-2xl font-black text-navy mb-2 uppercase tracking-widest">Canvi Organitzatiu 2027</h3>
+          <p className="text-navy/60 text-lg max-w-2xl mx-auto">
+            A principis de 2027, la situació laboral canviarà i l'organigrama serà diferent, adaptant-se a les noves necessitats i objectius estratègics de l'empresa.
+          </p>
+        </div>
+      </section>
 
     </motion.div>
   );
