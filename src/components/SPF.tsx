@@ -51,52 +51,57 @@ export default function SPF() {
           </div>
           <div className="glass-card p-8 overflow-hidden bg-white">
             <div className="flex flex-col items-center space-y-8">
-              <h4 className="text-2xl font-black text-navy mb-4 uppercase tracking-widest">Organigrama</h4>
+              <h4 className="text-3xl font-black text-[#1e4b8a] mb-4 uppercase tracking-[0.2em]">Organigrama</h4>
               
               {/* Gerent */}
               <div className="relative">
-                <div className="border-2 border-navy px-12 py-3 font-bold text-navy bg-white shadow-sm">
+                <div className="border-[3px] border-[#1e4b8a] px-16 py-4 font-bold text-[#1e4b8a] bg-white text-2xl min-w-[240px] text-center">
                   Gerent
                 </div>
-                <div className="absolute left-1/2 -bottom-8 w-0.5 h-8 bg-navy -translate-x-1/2" />
+                <div className="absolute left-1/2 -bottom-10 w-[3px] h-10 bg-[#1e4b8a] -translate-x-1/2" />
               </div>
 
               {/* Horizontal Line */}
-              <div className="relative w-full px-4">
-                <div className="h-0.5 bg-navy w-full" />
+              <div className="relative w-full px-12">
+                <div className="h-[3px] bg-[#1e4b8a] w-full" />
                 {/* Vertical connectors */}
-                <div className="absolute left-[16.6%] top-0 w-0.5 h-8 bg-navy" />
-                <div className="absolute left-1/2 top-0 w-0.5 h-8 bg-navy -translate-x-1/2" />
-                <div className="absolute right-[16.6%] top-0 w-0.5 h-8 bg-navy" />
+                <div className="absolute left-12 top-0 w-[3px] h-10 bg-[#1e4b8a]" />
+                <div className="absolute left-1/2 top-0 w-[3px] h-10 bg-[#1e4b8a] -translate-x-1/2" />
+                <div className="absolute right-12 top-0 w-[3px] h-10 bg-[#1e4b8a]" />
               </div>
 
               {/* Departments */}
-              <div className="grid grid-cols-3 w-full gap-4 pt-4">
-                <div className="flex flex-col items-center space-y-8">
-                  <div className="border-2 border-navy px-4 py-3 font-bold text-navy bg-white w-full text-center text-sm">
+              <div className="grid grid-cols-3 w-full gap-6 pt-6">
+                {/* Administració */}
+                <div className="flex flex-col items-center space-y-10">
+                  <div className="bg-[#0059a1] px-4 py-4 font-bold text-white w-full text-center text-lg rounded-lg shadow-md">
                     Administració
                   </div>
                   <div className="flex gap-4">
-                    <div className="border-2 border-navy size-10 flex items-center justify-center font-bold text-navy">M</div>
-                    <div className="border-2 border-navy size-10 flex items-center justify-center font-bold text-navy">E</div>
+                    <div className="bg-[#e85718] size-12 flex items-center justify-center font-bold text-white rounded-lg shadow-md text-xl">M</div>
+                    <div className="bg-[#e85718] size-12 flex items-center justify-center font-bold text-white rounded-lg shadow-md text-xl">E</div>
                   </div>
                 </div>
-                <div className="flex flex-col items-center space-y-8">
-                  <div className="border-2 border-navy px-4 py-3 font-bold text-navy bg-white w-full text-center text-sm">
+
+                {/* Producció */}
+                <div className="flex flex-col items-center space-y-10">
+                  <div className="bg-[#0059a1] px-4 py-4 font-bold text-white w-full text-center text-lg rounded-lg shadow-md">
                     Producció
                   </div>
                   <div className="flex gap-4">
-                    <div className="border-2 border-navy size-10 flex items-center justify-center font-bold text-navy">E</div>
-                    <div className="border-2 border-navy size-10 flex items-center justify-center font-bold text-navy">E</div>
+                    <div className="bg-[#008f39] size-12 flex items-center justify-center font-bold text-white rounded-lg shadow-md text-xl">E</div>
+                    <div className="bg-[#008f39] size-12 flex items-center justify-center font-bold text-white rounded-lg shadow-md text-xl">E</div>
                   </div>
                 </div>
-                <div className="flex flex-col items-center space-y-8">
-                  <div className="border-2 border-navy px-4 py-3 font-bold text-navy bg-white w-full text-center text-sm">
+
+                {/* Qualitat */}
+                <div className="flex flex-col items-center space-y-10">
+                  <div className="bg-[#0059a1] px-4 py-4 font-bold text-white w-full text-center text-lg rounded-lg shadow-md">
                     Qualitat
                   </div>
                   <div className="flex gap-4">
-                    <div className="border-2 border-navy size-10 flex items-center justify-center font-bold text-navy">J</div>
-                    <div className="border-2 border-navy size-10 flex items-center justify-center font-bold text-navy">B</div>
+                    <div className="bg-[#f9b200] size-12 flex items-center justify-center font-bold text-white rounded-lg shadow-md text-xl">J</div>
+                    <div className="bg-[#f9b200] size-12 flex items-center justify-center font-bold text-white rounded-lg shadow-md text-xl">B</div>
                   </div>
                 </div>
               </div>
@@ -154,19 +159,6 @@ export default function SPF() {
           </div>
         </section>
       </div>
-
-      {/* Future Outlook */}
-      <section className="mt-20">
-        <div className="glass-card p-8 bg-primary/5 border-primary/20 border-dashed border-2 text-center">
-          <div className="inline-flex p-3 rounded-full bg-primary/10 text-primary mb-4">
-            <BarChart3 size={32} />
-          </div>
-          <h3 className="text-2xl font-black text-navy mb-2 uppercase tracking-widest">Canvi Organitzatiu 2027</h3>
-          <p className="text-navy/60 text-lg max-w-2xl mx-auto">
-            A principis de 2027, la situació laboral canviarà i l'organigrama serà diferent, adaptant-se a les noves necessitats i objectius estratègics de l'empresa.
-          </p>
-        </div>
-      </section>
 
     </motion.div>
   );

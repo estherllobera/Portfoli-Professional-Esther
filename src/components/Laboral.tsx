@@ -27,7 +27,7 @@ const experiences = [
   },
   {
     company: "UGT",
-    role: "Assistent Administratiu",
+    role: "Auxiliar Administratiu",
     icon: <Database size={32} className="text-slate-400" />,
     functions: [
       "Utilització de la base de dades Access",
@@ -38,7 +38,7 @@ const experiences = [
   },
   {
     company: "ECA",
-    role: "Assistent Administratiu",
+    role: "Auxiliar Administratiu",
     icon: <FileText size={32} className="text-slate-400" />,
     functions: [
       "Atenció al client",
@@ -49,7 +49,7 @@ const experiences = [
   },
   {
     company: "Gas Natural",
-    role: "Assistent Administratiu",
+    role: "Auxiliar Administratiu",
     icon: <Flame size={32} className="text-slate-400" />,
     functions: [
       "Atenció al client",
